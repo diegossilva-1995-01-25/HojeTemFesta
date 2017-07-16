@@ -1,0 +1,15 @@
+package view;
+
+import javax.swing.JPanel;
+
+public abstract class PainelGenerico extends JPanel {
+
+	private static final long serialVersionUID = 8318324971848069808L;
+
+	public abstract void painelParaMembro();
+	
+	public abstract void membroParaPainel();
+	
+	public abstract void limparTela();
+	
+}

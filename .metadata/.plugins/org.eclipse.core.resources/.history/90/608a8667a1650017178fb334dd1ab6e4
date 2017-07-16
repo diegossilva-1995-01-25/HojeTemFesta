@@ -1,0 +1,100 @@
+package view;
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JRadioButton;
+import javax.swing.JTable;
+import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+public class PainelConsulta extends PainelGenerico implements ActionListener {
+
+	private static final long serialVersionUID = -3455220062160717551L;
+	private JTextField txtCriterio;
+	private JTable tabelaPesquisa;
+
+	/**
+	 * Create the panel.
+	 */
+	public PainelConsulta() {
+		setLayout(new BorderLayout(0, 0));
+		
+		JPanel panelPesquisa = new JPanel();
+		add(panelPesquisa, BorderLayout.NORTH);
+		panelPesquisa.setLayout(new GridLayout(0, 3, 5, 5));
+		
+		JLabel lblCriterio = new JLabel("Crit\u00E9rio");
+		lblCriterio.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 32));
+		panelPesquisa.add(lblCriterio);
+		
+		txtCriterio = new JTextField();
+		txtCriterio.setFont(new Font("Arial", Font.PLAIN, 12));
+		panelPesquisa.add(txtCriterio);
+		txtCriterio.setColumns(10);
+		
+		JButton btnPesquisar = new JButton("Pesquisar");
+		btnPesquisar.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 32));
+		panelPesquisa.add(btnPesquisar);
+		
+		JRadioButton rdbtnPorCodigo = new JRadioButton("Por Id");
+		rdbtnPorCodigo.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				
+			}
+		});
+		rdbtnPorCodigo.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 32));
+		panelPesquisa.add(rdbtnPorCodigo);
+		
+		JRadioButton rdbtnPorNome = new JRadioButton("Por Nome");
+		rdbtnPorNome.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+			}
+		});
+		rdbtnPorNome.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 32));
+		panelPesquisa.add(rdbtnPorNome);
+		
+		JRadioButton rdbtnPorData = new JRadioButton("Por Data");
+		rdbtnPorData.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+			}
+		});
+		rdbtnPorData.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 32));
+		panelPesquisa.add(rdbtnPorData);
+		
+		tabelaPesquisa = new JTable();
+		tabelaPesquisa.setFont(new Font("Arial", Font.PLAIN, 12));
+		add(tabelaPesquisa, BorderLayout.CENTER);
+
+	}
+
+	@Override
+	public void painelParaMembro() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void membroParaPainel() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

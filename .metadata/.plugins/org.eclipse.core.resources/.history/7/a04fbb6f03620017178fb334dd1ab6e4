@@ -1,0 +1,133 @@
+package control;
+
+import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.event.TableModelListener;
+import javax.swing.table.TableModel;
+
+import dao.DAOConexaoBD;
+import interfaces.Buscavel;
+import model.Membro;
+
+public class CtrBusca implements Buscavel, TableModel {
+	private Membro membro;
+	private List<Membro> listaDeMembros;
+	private Connection conex;
+	
+	public CtrBusca() {
+		membro = new Membro();
+		listaDeMembros = new ArrayList<>();
+		conex = DAOConexaoBD.instanciarDAO().obterConexao();
+	}
+
+	@Override
+	public List<Membro> buscarAniversariantes() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String exibirEmTela(Membro m) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Membro> consultarMembro(String entrada) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public List<Membro> consultarMembroOrdData(String entrada) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public List<Membro> consultarMembroOrdNome(String entrada) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void addTableModelListener(TableModelListener l) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Class<?> getColumnClass(int columnIndex) {
+		// TODO Auto-generated method stub
+		switch (columnIndex) {
+		
+			case 0: return Integer.class;
+			case 1: return String.class;
+			case 2: return String.class;
+			case 3: return String.class;
+			case 4: return String.class;
+			case 5: return Integer.class;
+			case 6: return Integer.class;
+			case 7: return Integer.class;
+		}
+	
+		return String.class;
+		
+	}
+
+	@Override
+	public int getColumnCount() {
+		// TODO Auto-generated method stub
+		return 8;
+	}
+
+	@Override
+	public String getColumnName(int columnIndex) {
+		// TODO Auto-generated method stub
+		switch (columnIndex) {
+		
+			case 0: return "id";
+			case 1: return "nome";
+			case 2: return "apelido";
+			case 3: return "sobrenomes";
+			case 4: return "cargo";
+			case 5: return "dia";
+			case 6: return "mes";
+			case 7: return "ano";
+		}
+	
+		return "";
+		
+	}
+
+	@Override
+	public int getRowCount() {
+		// TODO Auto-generated method stub
+		return listaDeMembros.size();
+	}
+
+	@Override
+	public Object getValueAt(int rowIndex, int columnIndex) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean isCellEditable(int rowIndex, int columnIndex) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void removeTableModelListener(TableModelListener l) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

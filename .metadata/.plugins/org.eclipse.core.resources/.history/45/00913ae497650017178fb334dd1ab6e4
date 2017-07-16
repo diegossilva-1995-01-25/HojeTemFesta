@@ -1,0 +1,145 @@
+package view;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import java.awt.GridLayout;
+import javax.swing.JTextField;
+import java.awt.Font;
+import javax.swing.JTable;
+import javax.swing.JButton;
+
+public class PainelCadastro extends PainelGenerico implements ActionListener {
+
+	private static final long serialVersionUID = -3531168108973346408L;
+	private JTextField txtIdMembro;
+	private JTextField txtNome;
+	private JTextField txtApelido;
+	private JTextField txtSobrenomes;
+	private JTextField txtCargo;
+	private JTextField txtDia;
+	private JTextField txtMes;
+	private JTextField txtAno;
+	private JTable tabelaMembros;
+
+	/**
+	 * Create the panel.
+	 */
+	public PainelCadastro() {
+		setLayout(new BorderLayout(0, 0));
+		
+		JPanel painelCampos = new JPanel();
+		add(painelCampos, BorderLayout.NORTH);
+		painelCampos.setLayout(new GridLayout(0, 2, 5, 5));
+		
+		JLabel lblIdMembro = new JLabel("Id do Membro");
+		lblIdMembro.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		painelCampos.add(lblIdMembro);
+		
+		txtIdMembro = new JTextField();
+		txtIdMembro.setFont(new Font("Arial", Font.PLAIN, 12));
+		painelCampos.add(txtIdMembro);
+		txtIdMembro.setColumns(10);
+		
+		JLabel lblNome = new JLabel("Nome");
+		lblNome.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		painelCampos.add(lblNome);
+		
+		txtNome = new JTextField();
+		txtNome.setFont(new Font("Arial", Font.PLAIN, 12));
+		txtNome.setColumns(10);
+		painelCampos.add(txtNome);
+		
+		JLabel lblApelido = new JLabel("Apelido");
+		lblApelido.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		painelCampos.add(lblApelido);
+		
+		txtApelido = new JTextField();
+		txtApelido.setFont(new Font("Arial", Font.PLAIN, 12));
+		txtApelido.setColumns(10);
+		painelCampos.add(txtApelido);
+		
+		JLabel lblSobrenomes = new JLabel("Sobrenomes");
+		lblSobrenomes.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		painelCampos.add(lblSobrenomes);
+		
+		txtSobrenomes = new JTextField();
+		txtSobrenomes.setFont(new Font("Arial", Font.PLAIN, 12));
+		txtSobrenomes.setColumns(10);
+		painelCampos.add(txtSobrenomes);
+		
+		JLabel lblCargo = new JLabel("Cargo");
+		lblCargo.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		painelCampos.add(lblCargo);
+		
+		txtCargo = new JTextField();
+		txtCargo.setFont(new Font("Arial", Font.PLAIN, 12));
+		txtCargo.setColumns(10);
+		painelCampos.add(txtCargo);
+		
+		JLabel lblDia = new JLabel("Dia");
+		lblDia.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		painelCampos.add(lblDia);
+		
+		txtDia = new JTextField();
+		txtDia.setFont(new Font("Arial", Font.PLAIN, 12));
+		txtDia.setColumns(10);
+		painelCampos.add(txtDia);
+		
+		JLabel lblMes = new JLabel("M\u00EAs");
+		lblMes.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		painelCampos.add(lblMes);
+		
+		txtMes = new JTextField();
+		txtMes.setFont(new Font("Arial", Font.PLAIN, 12));
+		txtMes.setColumns(10);
+		painelCampos.add(txtMes);
+		
+		JLabel lblAno = new JLabel("Ano");
+		lblAno.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		painelCampos.add(lblAno);
+		
+		txtAno = new JTextField();
+		txtAno.setFont(new Font("Arial", Font.PLAIN, 12));
+		txtAno.setColumns(10);
+		painelCampos.add(txtAno);
+		
+		JButton btnAdicionar = new JButton("Adicionar");
+		painelCampos.add(btnAdicionar);
+		
+		JButton btnAlterar = new JButton("Alterar");
+		painelCampos.add(btnAlterar);
+		
+		JButton btnConsultar = new JButton("Consultar");
+		painelCampos.add(btnConsultar);
+		
+		JButton btnExcluir = new JButton("Excluir");
+		painelCampos.add(btnExcluir);
+		
+		tabelaMembros = new JTable();
+		tabelaMembros.setFont(new Font("Arial", Font.PLAIN, 12));
+		add(tabelaMembros, BorderLayout.CENTER);
+
+	}
+
+	@Override
+	public void painelParaMembro() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void membroParaPainel() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

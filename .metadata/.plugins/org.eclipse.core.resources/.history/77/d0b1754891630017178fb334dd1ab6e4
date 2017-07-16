@@ -1,0 +1,26 @@
+package view;
+
+public class PainelCadastro extends PainelGenerico {
+
+	private static final long serialVersionUID = -3531168108973346408L;
+
+	/**
+	 * Create the panel.
+	 */
+	public PainelCadastro() {
+
+	}
+
+	@Override
+	public void painelParaMembro() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void membroParaPainel() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

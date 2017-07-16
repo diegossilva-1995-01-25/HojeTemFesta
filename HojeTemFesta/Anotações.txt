@@ -1,0 +1,17 @@
+Fazer o Ctr e as Telas e Paineis;
+Use fonte Edwardian;
+Prazo: 04/07/2017.
+
+- Se for acionado quinta-feira, diga
+os aniversariantes dos últimos três
+dias e de hoje;
+- Se for acionado sábado, diga os
+aniversariantes dos últimos cinco
+dias e de hoje;
+- Se for acionado domingo, diga os
+aniversariantes dos últimos seis
+dias e de hoje;
+- Para cálculo dos dias do calendário
+gregoriano use long por garantia;
+- Acione o programa junto com o SO
+(leia-se Windows);

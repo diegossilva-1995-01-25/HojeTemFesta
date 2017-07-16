@@ -1,0 +1,16 @@
+package principal;
+
+import view.TelaPrograma;
+import control.CtrMembro;
+
+public class Classe0 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		CtrMembro controleMembro = new CtrMembro();
+		controleMembro.buscarAniversariantes();
+		TelaPrograma tp = new TelaPrograma();
+		tp.setVisible(true);
+	}
+
+}

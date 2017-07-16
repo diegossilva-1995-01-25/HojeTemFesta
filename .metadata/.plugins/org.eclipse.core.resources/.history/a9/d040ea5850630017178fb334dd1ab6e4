@@ -1,0 +1,60 @@
+package principal;
+
+import view.TelaPrograma;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JOptionPane;
+
+import control.CtrMembro;
+import model.Membro;
+
+public class Classe0 {
+	private static CtrMembro controleMembro;
+	private static TelaPrograma tp;
+	private static Membro m;
+	private static List<Membro> listaAniversariantes;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		exibirEmTelaAniversariante();
+		tp = new TelaPrograma();
+		tp.setVisible(true);
+	}
+	
+	// Usa este método a cada item adicionado na lista da query.
+	// Dê um jeito de a mensagem ser enviada à classe de view.
+	// A mensagem será exibida em um pop-up.
+	public static void exibirEmTelaAniversariante() {
+		listaAniversariantes = new ArrayList<>();
+		listaAniversariantes = controleMembro.buscarAniversariantes();
+		int cont = 0;
+		
+		while(cont < listaAniversariantes.size()) {
+			m = new Membro();
+			
+			m.setIdMembro(listaAniversariantes.get(cont).getIdMembro());
+			m.setNome(listaAniversariantes.get(cont).getNome());
+			m.setApelido(listaAniversariantes.get(cont).getApelido());
+			m.setSobrenomes(listaAniversariantes.get(cont).getSobrenomes());
+			m.setCargo(listaAniversariantes.get(cont).getCargo());
+			m.setDia(listaAniversariantes.get(cont).getDia());
+			m.setMes(listaAniversariantes.get(cont).getMes());
+			m.setAno(listaAniversariantes.get(cont).getAno());
+			
+			JOptionPane.showMessageDialog(null, "Parabéns,\n" + m.getCargo() + " "
+					+ m.getNome() + " \"" + m.getApelido() + "\" " + m.getSobrenomes()
+					+ "\npor seu aniversário.");
+			
+			cont++;
+			
+		}
+		
+		JOptionPane.showMessageDialog(null, "Que as mais seletas bênçãos possam vos\n"
+				+ " alcançar e que Jesus vos multiplique vossos anos de vida e vos\n"
+				+ " dê a Vida Eterna!!!\n;-D");
+		
+	}
+
+}

@@ -1,0 +1,26 @@
+package view;
+
+public class PainelConsulta extends PainelGenerico {
+
+	private static final long serialVersionUID = -3455220062160717551L;
+
+	/**
+	 * Create the panel.
+	 */
+	public PainelConsulta() {
+
+	}
+
+	@Override
+	public void painelParaMembro() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void membroParaPainel() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

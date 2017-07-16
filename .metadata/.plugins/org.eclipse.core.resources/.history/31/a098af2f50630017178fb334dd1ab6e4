@@ -1,0 +1,26 @@
+package principal;
+
+import view.TelaPrograma;
+import control.CtrMembro;
+import model.Membro;
+
+public class Classe0 {
+	private static CtrMembro controleMembro;
+	private static TelaPrograma tp;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		controleMembro = new CtrMembro();
+		controleMembro.buscarAniversariantes();
+		tp = new TelaPrograma();
+		tp.setVisible(true);
+	}
+	
+	// Usa este método a cada item adicionado na lista da query.
+	// Dê um jeito de a mensagem ser enviada à classe de view.
+	// A mensagem será exibida em um pop-up.
+	public void exibirEmTela(Membro m) {
+		
+	}
+
+}

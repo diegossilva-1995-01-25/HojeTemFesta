@@ -1,0 +1,293 @@
+package view;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.GridLayout;
+import javax.swing.JTextField;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+
+import control.CtrMembro;
+import model.Membro;
+
+import java.awt.Font;
+import javax.swing.JTable;
+import javax.swing.JButton;
+
+public class PainelCadastro extends PainelGenerico implements ActionListener, ListSelectionListener {
+
+	private static final long serialVersionUID = -3531168108973346408L;
+	private JTextField txtIdMembro;
+	private JTextField txtNome;
+	private JTextField txtApelido;
+	private JTextField txtSobrenomes;
+	private JTextField txtCargo;
+	private JTextField txtDia;
+	private JTextField txtMes;
+	private JTextField txtAno;
+	private JScrollPane rolagem;
+	private JTable tabelaMembros;
+	private Membro m;
+	private CtrMembro controleMembro;
+
+	/**
+	 * Create the panel.
+	 */
+	public PainelCadastro() {
+		//m = new Membro();
+		controleMembro = new CtrMembro();
+		
+		setLayout(new BorderLayout(0, 0));
+		
+		JPanel painelCampos = new JPanel();
+		add(painelCampos, BorderLayout.NORTH);
+		painelCampos.setLayout(new GridLayout(0, 2, 5, 5));
+		
+		JLabel lblIdMembro = new JLabel("Id do Membro");
+		lblIdMembro.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		painelCampos.add(lblIdMembro);
+		
+		txtIdMembro = new JTextField();
+		txtIdMembro.setEnabled(false);
+		txtIdMembro.setFont(new Font("Arial", Font.PLAIN, 12));
+		painelCampos.add(txtIdMembro);
+		txtIdMembro.setColumns(10);
+		
+		JLabel lblNome = new JLabel("Nome");
+		lblNome.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		painelCampos.add(lblNome);
+		
+		txtNome = new JTextField();
+		txtNome.setFont(new Font("Arial", Font.PLAIN, 12));
+		txtNome.setColumns(10);
+		painelCampos.add(txtNome);
+		
+		JLabel lblApelido = new JLabel("Apelido");
+		lblApelido.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		painelCampos.add(lblApelido);
+		
+		txtApelido = new JTextField();
+		txtApelido.setFont(new Font("Arial", Font.PLAIN, 12));
+		txtApelido.setColumns(10);
+		painelCampos.add(txtApelido);
+		
+		JLabel lblSobrenomes = new JLabel("Sobrenomes");
+		lblSobrenomes.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		painelCampos.add(lblSobrenomes);
+		
+		txtSobrenomes = new JTextField();
+		txtSobrenomes.setFont(new Font("Arial", Font.PLAIN, 12));
+		txtSobrenomes.setColumns(10);
+		painelCampos.add(txtSobrenomes);
+		
+		JLabel lblCargo = new JLabel("Cargo");
+		lblCargo.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		painelCampos.add(lblCargo);
+		
+		txtCargo = new JTextField();
+		txtCargo.setFont(new Font("Arial", Font.PLAIN, 12));
+		txtCargo.setColumns(10);
+		painelCampos.add(txtCargo);
+		
+		JLabel lblDia = new JLabel("Dia");
+		lblDia.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		painelCampos.add(lblDia);
+		
+		txtDia = new JTextField();
+		txtDia.setFont(new Font("Arial", Font.PLAIN, 12));
+		txtDia.setColumns(10);
+		painelCampos.add(txtDia);
+		
+		JLabel lblMes = new JLabel("M\u00EAs");
+		lblMes.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		painelCampos.add(lblMes);
+		
+		txtMes = new JTextField();
+		txtMes.setFont(new Font("Arial", Font.PLAIN, 12));
+		txtMes.setColumns(10);
+		painelCampos.add(txtMes);
+		
+		JLabel lblAno = new JLabel("Ano");
+		lblAno.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		painelCampos.add(lblAno);
+		
+		txtAno = new JTextField();
+		txtAno.setFont(new Font("Arial", Font.PLAIN, 12));
+		txtAno.setColumns(10);
+		painelCampos.add(txtAno);
+		
+		JButton btnAdicionar = new JButton("Adicionar");
+		btnAdicionar.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		btnAdicionar.addActionListener(this);
+		painelCampos.add(btnAdicionar);
+		
+		JButton btnAlterar = new JButton("Alterar");
+		btnAlterar.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		btnAlterar.addActionListener(this);
+		painelCampos.add(btnAlterar);
+		
+		JButton btnConsultar = new JButton("Consultar");
+		btnConsultar.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		btnConsultar.addActionListener(this);
+		painelCampos.add(btnConsultar);
+		
+		JButton btnExcluir = new JButton("Excluir");
+		btnExcluir.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		btnExcluir.addActionListener(this);
+		painelCampos.add(btnExcluir);
+		
+		rolagem = new JScrollPane();
+		tabelaMembros = new JTable(controleMembro);
+		tabelaMembros.setFont(new Font("Arial", Font.PLAIN, 12));
+		tabelaMembros.getSelectionModel().addListSelectionListener(this);
+		rolagem.setViewportView(tabelaMembros);
+		add(rolagem, BorderLayout.CENTER);
+		
+		controleMembro.consultarMembro("");
+		atualizarTabela();
+		limparTela();
+		
+
+	}
+
+	@Override
+	public Membro painelParaMembro(Membro m, String origem) {
+		// TODO Auto-generated method stub
+		// Duas situações para pegar o id
+		if(origem.equals("Adicionar")) {
+			m.setIdMembro(controleMembro.ultimoInserido() + 1); // Pega o id do último cadastrado
+		} else {
+			m.setIdMembro(Integer.parseInt(txtIdMembro.getText())); // Pega o id do selecionado
+		}
+		m.setNome(txtNome.getText());
+		m.setApelido(txtApelido.getText());
+		m.setSobrenomes(txtSobrenomes.getText());
+		m.setCargo(txtCargo.getText());
+		m.setDia(Integer.parseInt(txtDia.getText()));
+		m.setMes(Integer.parseInt(txtMes.getText()));
+		m.setAno(Integer.parseInt(txtAno.getText()));
+		
+		return m;
+	}
+
+	@Override
+	public void membroParaPainel(Membro m) {
+		// TODO Auto-generated method stub
+		txtIdMembro.setText(String.valueOf(m.getIdMembro()));
+		txtNome.setText(m.getNome());
+		txtApelido.setText(m.getApelido());
+		txtSobrenomes.setText(m.getSobrenomes());
+		txtCargo.setText(m.getCargo());
+		txtDia.setText(String.valueOf(m.getDia()));
+		txtMes.setText(String.valueOf(m.getMes()));
+		txtAno.setText(String.valueOf(m.getAno()));
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if(e.getActionCommand().equals("Adicionar")) {
+			
+			if(txtNome.getText().trim().isEmpty() == false && 
+					txtDia.getText().trim().isEmpty() == false &&
+					txtMes.getText().trim().isEmpty() == false &&
+					txtAno.getText().trim().isEmpty() == false) {
+				
+				m = new Membro();
+				m = painelParaMembro(m, e.getActionCommand());
+				controleMembro.adicionarMembro(m);
+				controleMembro.consultarMembro("");
+				atualizarTabela();
+				limparTela();
+				
+			} else {
+				JOptionPane.showMessageDialog(null, "Os campos \"Nome\","
+						+ "\n\"Dia\", \"Mês\" e \"Ano\" devem estar"
+						+ "preenchidos antes de acionar este botão.");
+			}
+			
+			
+			
+		} else if(e.getActionCommand().equals("Alterar")) {
+			
+			if(txtNome.getText().trim().isEmpty() == false && 
+					txtDia.getText().trim().isEmpty() == false &&
+					txtMes.getText().trim().isEmpty() == false &&
+					txtAno.getText().trim().isEmpty() == false &&
+					txtIdMembro.getText().trim().isEmpty() == false) {
+				
+				m = new Membro();
+				m = painelParaMembro(m, e.getActionCommand());
+				controleMembro.alterarMembro(m);
+				controleMembro.consultarMembro("");
+				atualizarTabela();
+				limparTela();
+				
+			} else {
+				
+				JOptionPane.showMessageDialog(null, "É necessário escolher um item"
+						+ "\na deletar na tabela antes de apertar"
+						+ "este botão.");
+				
+				JOptionPane.showMessageDialog(null, "Os campos \"Nome\","
+						+ "\n\"Dia\", \"Mês\" e \"Ano\" devem estar"
+						+ "preenchidos antes de acionar este botão.");
+			}
+			
+		} else if(e.getActionCommand().equals("Consultar")) {
+			m = new Membro();
+			controleMembro.consultarMembro(txtNome.getText());
+			atualizarTabela();
+			limparTela();
+			
+		} else if(e.getActionCommand().equals("Excluir")) {
+			if(txtIdMembro.getText().equals("")) {
+				JOptionPane.showMessageDialog(null, "É necessário escolher um item"
+						+ "\na deletar na tabela antes de apertar"
+						+ "este botão.");
+			} else {
+				m = new Membro();
+				m = painelParaMembro(m, e.getActionCommand());
+				controleMembro.excluirMembro(m);
+				controleMembro.consultarMembro("");
+				atualizarTabela();
+				limparTela();
+			}
+			
+		}
+	}
+
+	@Override
+	public void limparTela() {
+		// TODO Auto-generated method stub
+		txtIdMembro.setText("");
+		txtNome.setText("");
+		txtApelido.setText("");
+		txtSobrenomes.setText("");
+		txtCargo.setText("");
+		txtDia.setText("");
+		txtMes.setText("");
+		txtAno.setText("");
+	}
+
+	@Override
+	public void valueChanged(ListSelectionEvent e) {
+		// TODO Auto-generated method stub
+		int linha = tabelaMembros.getSelectedRow();
+		m = controleMembro.retornarLinhaEscolhida(linha);
+		membroParaPainel(m);
+	}
+	
+	public void atualizarTabela(){
+		tabelaMembros.invalidate();
+		tabelaMembros.revalidate();
+		tabelaMembros.repaint();
+	}
+
+}

@@ -1,0 +1,69 @@
+package principal;
+
+import view.TelaPrograma;
+
+//import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JOptionPane;
+
+import control.CtrMembro;
+import model.Membro;
+
+public class Classe0 {
+	private static CtrMembro controleMembro;
+	private static TelaPrograma tp;
+	private static Membro m;
+	private static List<Membro> listaAniversariantes;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//exibirEmTelaAniversarianteHoje(); // Ligue o método quando tudo pronto
+		tp = new TelaPrograma();
+		tp.setVisible(true);
+	}
+	
+	// A mensagem será exibida em um pop-up.
+	public static void exibirEmTelaAniversarianteHoje() {
+		listaAniversariantes = new ArrayList<>();
+		
+		// Captura e formata a data de hoje
+		LocalDate hoje = LocalDate.now();
+		//DateTimeFormatter formato = SimpleDateFormat("dd/MM/yyyy"); // Funciona?
+		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		String dataEntrada = hoje.format(formato);
+		
+		listaAniversariantes = controleMembro.buscarAniversariantes(dataEntrada);
+		
+		int cont = 0;
+		
+		while(cont < listaAniversariantes.size()) {
+			m = new Membro();
+			
+			m.setIdMembro(listaAniversariantes.get(cont).getIdMembro());
+			m.setNome(listaAniversariantes.get(cont).getNome());
+			m.setApelido(listaAniversariantes.get(cont).getApelido());
+			m.setSobrenomes(listaAniversariantes.get(cont).getSobrenomes());
+			m.setCargo(listaAniversariantes.get(cont).getCargo());
+			m.setDia(listaAniversariantes.get(cont).getDia());
+			m.setMes(listaAniversariantes.get(cont).getMes());
+			m.setAno(listaAniversariantes.get(cont).getAno());
+			
+			JOptionPane.showMessageDialog(null, "Parabéns,\n" + m.getCargo() + " "
+					+ m.getNome() + " \"" + m.getApelido() + "\" " + m.getSobrenomes()
+					+ "\npor seu aniversário.");
+			
+			cont++;
+			
+		}
+		
+		JOptionPane.showMessageDialog(null, "Que as mais seletas bênçãos possam vos\n"
+				+ " alcançar e que Jesus vos multiplique vossos anos de vida e vos\n"
+				+ " dê a Vida Eterna!!!\n;-D");
+		
+	}
+
+}

@@ -1,0 +1,56 @@
+package control;
+
+import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.List;
+
+import dao.DAOConexaoBD;
+import interfaces.Buscavel;
+import model.Membro;
+
+/*
+ * Autor: Diego Souza Silva
+ * Data: 28/06/2017
+ */
+
+public class CtrMembro implements Buscavel {
+	private Membro m;
+	private List<Membro> listaDeMembros;
+	private Connection conex;
+	
+	public CtrMembro() {
+		m = new Membro();
+		listaDeMembros = new ArrayList<>();
+		conex = DAOConexaoBD.instanciarDAO().obterConexao();
+	}
+	
+	public void adicionarMembro(Membro m) {
+		
+	}
+	
+	public void alterarMembro(Membro m) {
+		
+	}
+	
+	@Override
+	public List<Membro> consultarMembro(String entrada) {
+		return null;
+	}
+
+	public void excluirrMembro(Membro m) {
+		
+	}
+
+	@Override
+	public List<Membro> buscarAniversariantes() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String exibirEmTela(Membro m) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

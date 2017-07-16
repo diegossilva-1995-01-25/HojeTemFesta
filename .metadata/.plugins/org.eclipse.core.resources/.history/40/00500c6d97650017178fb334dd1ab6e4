@@ -1,0 +1,132 @@
+package view;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import java.awt.GridLayout;
+import javax.swing.JTextField;
+import java.awt.Font;
+import javax.swing.JTable;
+
+public class PainelCadastro extends PainelGenerico implements ActionListener {
+
+	private static final long serialVersionUID = -3531168108973346408L;
+	private JTextField txtIdMembro;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
+	private JTextField textField_5;
+	private JTextField textField_6;
+	private JTable table;
+
+	/**
+	 * Create the panel.
+	 */
+	public PainelCadastro() {
+		setLayout(new BorderLayout(0, 0));
+		
+		JPanel painelCampos = new JPanel();
+		add(painelCampos, BorderLayout.NORTH);
+		painelCampos.setLayout(new GridLayout(0, 2, 5, 5));
+		
+		JLabel lblIdMembro = new JLabel("Id do Membro");
+		lblIdMembro.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		painelCampos.add(lblIdMembro);
+		
+		txtIdMembro = new JTextField();
+		txtIdMembro.setFont(new Font("Arial", Font.PLAIN, 12));
+		painelCampos.add(txtIdMembro);
+		txtIdMembro.setColumns(10);
+		
+		JLabel label = new JLabel("Id do Membro");
+		label.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		painelCampos.add(label);
+		
+		textField = new JTextField();
+		textField.setFont(new Font("Arial", Font.PLAIN, 12));
+		textField.setColumns(10);
+		painelCampos.add(textField);
+		
+		JLabel label_1 = new JLabel("Id do Membro");
+		label_1.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		painelCampos.add(label_1);
+		
+		textField_1 = new JTextField();
+		textField_1.setFont(new Font("Arial", Font.PLAIN, 12));
+		textField_1.setColumns(10);
+		painelCampos.add(textField_1);
+		
+		JLabel label_2 = new JLabel("Id do Membro");
+		label_2.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		painelCampos.add(label_2);
+		
+		textField_2 = new JTextField();
+		textField_2.setFont(new Font("Arial", Font.PLAIN, 12));
+		textField_2.setColumns(10);
+		painelCampos.add(textField_2);
+		
+		JLabel label_3 = new JLabel("Id do Membro");
+		label_3.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		painelCampos.add(label_3);
+		
+		textField_3 = new JTextField();
+		textField_3.setFont(new Font("Arial", Font.PLAIN, 12));
+		textField_3.setColumns(10);
+		painelCampos.add(textField_3);
+		
+		JLabel label_4 = new JLabel("Id do Membro");
+		label_4.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		painelCampos.add(label_4);
+		
+		textField_4 = new JTextField();
+		textField_4.setFont(new Font("Arial", Font.PLAIN, 12));
+		textField_4.setColumns(10);
+		painelCampos.add(textField_4);
+		
+		JLabel label_5 = new JLabel("Id do Membro");
+		label_5.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		painelCampos.add(label_5);
+		
+		textField_5 = new JTextField();
+		textField_5.setFont(new Font("Arial", Font.PLAIN, 12));
+		textField_5.setColumns(10);
+		painelCampos.add(textField_5);
+		
+		JLabel label_6 = new JLabel("Id do Membro");
+		label_6.setFont(new Font("Edwardian Script ITC", Font.PLAIN, 24));
+		painelCampos.add(label_6);
+		
+		textField_6 = new JTextField();
+		textField_6.setFont(new Font("Arial", Font.PLAIN, 12));
+		textField_6.setColumns(10);
+		painelCampos.add(textField_6);
+		
+		table = new JTable();
+		table.setFont(new Font("Arial", Font.PLAIN, 12));
+		add(table, BorderLayout.CENTER);
+
+	}
+
+	@Override
+	public void painelParaMembro() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void membroParaPainel() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
